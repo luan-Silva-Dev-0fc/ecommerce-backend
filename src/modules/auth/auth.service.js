@@ -41,8 +41,10 @@ async function login(email, senha) {
     const { senha: _, ...usuarioSemSenha } = user;
 
     return {
+      message: "Login efetuado com sucesso",
       usuario: usuarioSemSenha,
-      token
+      token,
+      emailVerificado: user.emailVerificado ?? false,
     };
   } catch (error) {
     console.error('❌ Erro detalhado:', error);
