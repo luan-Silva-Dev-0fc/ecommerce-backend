@@ -14,8 +14,8 @@ app.use(express.json());
 // Swagger Documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions));
 
-app.use(errorMiddleware);
-
 app.use("/api", routes);
+
+app.use(errorMiddleware);
 
 module.exports = app;
